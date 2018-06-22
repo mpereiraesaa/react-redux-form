@@ -4,7 +4,12 @@
   "description": "A reactive basic form ready to submit made with react,redux and setup with webpack",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "watch-css": "npm run build-css && node-sass -w ./src/styles/styles.scss ./src/styles/styles.css",
+    "build-css": "node-sass ./src/styles/styles.scss ./src/styles/styles.css",
+    "build": "webpack production",
+    "build-dev": "webpack development",
+    "start": "npm-run-all -p watch-css start-js",
+    "start-js": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,13 +21,6 @@
   "bugs": {
     "url": "https://github.com/ManuelPereira2016/reactive-form/issues"
   },
-  "babel": {
-  "presets": [
-    "env",
-    "react",
-    "stage-2"
-  ]
-},
   "homepage": "https://github.com/ManuelPereira2016/reactive-form#readme",
   "dependencies": {
     "babel-core": "^6.26.3",
@@ -30,6 +28,20 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-flexbox-grid": "^2.1.2",
+    "react-hot-loader": "^4.3.3",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-devtools": "^3.4.1",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
