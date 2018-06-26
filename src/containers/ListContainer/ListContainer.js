@@ -6,8 +6,8 @@ import ListItem from "../../components/List/ListItem";
 class ListContainer extends Component {
 
   renderItems() {
-    return [0,1].map(() => (
-      <ListItem />
+    return [0,1].map((el, index) => (
+      <ListItem key={`item_${index}`} />
     ));
   }
 
