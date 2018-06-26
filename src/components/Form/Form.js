@@ -72,6 +72,14 @@ class Form extends Component {
             }
             SUBMIT
           </button>
+          {this.props.message
+            ?
+            <div className="alert alert-info">
+              <strong>Info!</strong> {this.props.message}
+            </div>
+            :
+            null
+          }
         </form>
       </Col>
     );

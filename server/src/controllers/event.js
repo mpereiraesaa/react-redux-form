@@ -4,7 +4,7 @@ import logger from '../utils/logger';
 exports.list = (req, res) => {
 	const query = req.query || {};
 
-	Event.apiQuery(query)
+	Event.find()
 		.select('first_name last_name email event_date')
 		.then(events => {
 			res.json(events);

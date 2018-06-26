@@ -8,24 +8,17 @@ export const EventSchema = new Schema(
                         type: String,
                         lowercase: true,
                         trim: true,
-                        index: true,
                         unique: true,
                         required: true,
                 },
                 first_name: {
                         type: String,
-                        lowercase: true,
                         trim: true,
-                        index: true,
-                        unique: true,
                         required: true,
                 },
                 last_name: {
                         type: String,
-                        lowercase: true,
                         trim: true,
-                        index: true,
-                        unique: true,
                         required: true,
                 },
                 event_date: {
@@ -39,4 +32,6 @@ export const EventSchema = new Schema(
 EventSchema.plugin(timestamps);
 EventSchema.index({ email: 1 });
 
-module.exports = exports = mongoose.model('Event', EventSchema);
+// module.exports = exports = mongoose.model('Event', EventSchema);
+let Event = mongoose.model('Event', EventSchema);
+export default Event;

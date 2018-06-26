@@ -14,6 +14,7 @@ import {
   getErrors
 } from "../../redux/modules/selectors/form";
 import {createEvent} from "../../api/form";
+import to from "await-to-js";
 
 class FormContainer extends Component {
   static propTypes = {
@@ -78,23 +79,29 @@ class FormContainer extends Component {
 
     const [err, data] = await to(createEvent(this.props.formData));
 
-    debugger
-
     if (err) {
       console.error(err);
-      message = err;
+      message = err.message;
     }
 
     if (data) {
       message = "Event succesfully created.";
     }
 
+    this.formRef.current.reset();
+
+    setTimeout(() => {
+      this.setState((prevState) => {
+        return {
+          message: ""
+        };
+      });
+    }, 10000);
+
     this.setState({
       isProcessing: false,
       message
     });
-
-    console.log(this.props.formData);
   };
 
   render() {
