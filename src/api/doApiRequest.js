@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = '127.0.0.1:5000/';
+const API = '127.0.0.1:3000/';
 
 /**
  * Method for making ajax calls to the site's api
