@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Col } from 'react-flexbox-grid';
 import MDSpinner from "react-md-spinner";
 import Error from "../Miscellaneous/Error";
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Form extends Component {
   static propTypes = {
@@ -74,9 +75,16 @@ class Form extends Component {
           </button>
           {this.props.message
             ?
-            <div className="alert alert-info">
-              <strong>Info!</strong> {this.props.message}
-            </div>
+            <ReactCSSTransitionGroup
+              transitionName="fade"
+              transitionEnterTimeout={100}
+              transitionLeaveTimeout={500}
+              transitionEnter={true}
+              transitionLeave={true}>
+              <div className="alert alert-info">
+                <strong>Info!</strong> {this.props.message}
+              </div>
+            </ReactCSSTransitionGroup>
             :
             null
           }
