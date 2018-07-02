@@ -1,21 +1,21 @@
 import { USER_INPUT_RECEIVED, SET_ERROR_INPUT, USER_INPUT_VALIDATE } from "../actions/form";
 import { validateFunc, getObjectLength } from "../../../utils/functions";
 
-const setErrors = (errObj) => {
+export const setErrors = (errObj) => {
   return {
     type: SET_ERROR_INPUT,
     data: errObj
   }
 }
 
-const isValidated = (errCount) => {
+export const isValidated = (errCount) => {
   return {
     type: USER_INPUT_VALIDATE,
     data: !errCount
   }
 }
 
-const setInput = (data) => {
+export const setInput = (data) => {
   return {
     type: USER_INPUT_RECEIVED,
     data

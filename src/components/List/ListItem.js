@@ -8,14 +8,14 @@ const ListItem = (props) => (
       <h3>EVENT</h3>
     </div>
     <div className="card__body">
-      <p>first_name last_name</p>
-      <p>event_date</p>
+      <p>{props.event.first_name + " " + props.event.last_name}</p>
+      <p>{props.event.event_date}</p>
     </div>
   </div>
 );
 
 ListItem.propTypes = {
-  data: PropTypes.object
+  event: PropTypes.object
 }
 
 export default ListItem;

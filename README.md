@@ -1,6 +1,6 @@
 # reactive-form
 
-This project includes the client code and the server for an small app whom main purpose is to show how good can we develop and complete frontend and the correspondant api.
+This project includes the client code and the server for an small app whom main purpose is to show how good can we develop and complete frontend and the correspondant api. webpack 4 is being used and setup is from scratch.
 
 The frontend is simple and DRY, used the Container/Component pattern to separate the presentation view and layout from the logic and data, redux is implemented and is helping through some actions and reducers to implement a form validation against the user input before calling api.
 

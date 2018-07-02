@@ -16,9 +16,13 @@ import {
 import {createEvent} from "../../api/form";
 import to from "await-to-js";
 
-class FormContainer extends Component {
+export class FormContainer extends Component {
   static propTypes = {
-    dispatch: PropTypes.func.isRequired,
+    receiveUserInput: PropTypes.func.isRequired,
+    validateInput: PropTypes.func.isRequired,
+    validateFields: PropTypes.func.isRequired,
+    setupFields: PropTypes.func.isRequired,
+    addToList: PropTypes.func.isRequired,
     isValidated: PropTypes.bool.isRequired,
     formData: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
@@ -36,7 +40,7 @@ class FormContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(setupFields(this.formRef.current));
+    this.props.setupFields(this.formRef.current);
   }
 
   getInput = e => {
@@ -46,7 +50,7 @@ class FormContainer extends Component {
       type: e.target.type
     };
 
-    this.props.dispatch(receiveUserInput(data, this.props.errors));
+    this.props.receiveUserInput(data, this.props.errors);
   };
 
   onFocusOut = e => {
@@ -56,7 +60,7 @@ class FormContainer extends Component {
       type: e.target.type
     };
 
-    this.props.dispatch(validateInput(data, this.props.errors));
+    this.props.validateInput(data, this.props.errors);
   };
 
   onSubmit = async e => {
@@ -67,7 +71,7 @@ class FormContainer extends Component {
     const {isValidated} = this.props;
 
     if (!isValidated) {
-      this.props.dispatch(validateFields(this.props.formData));
+      this.props.validateFields(this.props.formData);
 
       return false;
     }
@@ -86,6 +90,8 @@ class FormContainer extends Component {
 
     if (data) {
       message = "Event succesfully created.";
+
+      await this.props.addToList(data);
     }
 
     this.formRef.current.reset();
@@ -127,4 +133,14 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(FormContainer);
+function mapDispatchToProps(dispatch) {
+  return {
+    validateFields: (data) => dispatch(validateFields(data)),
+    validateInput: (data, prevErrors) => dispatch(validateInput(data, prevErrors)),
+    setupFields: (form) => dispatch(setupFields(form)),
+    receiveUserInput: (data, prevErrors) => dispatch(receiveUserInput(data, prevErrors)),
+    addToList: (event) => dispatch(addToList(event))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormContainer);
