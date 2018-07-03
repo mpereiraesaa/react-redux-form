@@ -46,6 +46,8 @@ body {
 
 .list-container {
   display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
   height: 150px;
 
   .card {

@@ -8,6 +8,7 @@ import {
   validateFields,
   setupFields
 } from "../../redux/modules/actionsCreators/form";
+import { addToList } from "../../redux/modules/actionsCreators/list";
 import {
   getForm,
   isValidated,
@@ -102,7 +103,7 @@ export class FormContainer extends Component {
           message: ""
         };
       });
-    }, 10000);
+    }, 6000);
 
     this.setState({
       isProcessing: false,

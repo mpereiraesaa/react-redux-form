@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import moment from "moment";
 
 const ListItem = (props) => (
   <div className="card">
@@ -9,7 +10,7 @@ const ListItem = (props) => (
     </div>
     <div className="card__body">
       <p>{props.event.first_name + " " + props.event.last_name}</p>
-      <p>{props.event.event_date}</p>
+      <p>{moment(props.event.event_date).format("YYYY-MM-DD HH:mm")}</p>
     </div>
   </div>
 );
