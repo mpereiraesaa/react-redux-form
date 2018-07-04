@@ -11,12 +11,13 @@ export default function list(state = initialState, action) {
     case LIST_FETCH_SUCCESS:
       return {
         ...state,
-        data: action.data
+        data: action.data,
+        isFetchingList: false
       };
     case IS_FETCH_LOADING:
       return {
         ...state,
-        isLoading: true
+        isFetchingList: true
       };
     case FETCH_FAILED:
       return {

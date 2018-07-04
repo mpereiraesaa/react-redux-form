@@ -21,4 +21,13 @@ describe("List reducer", () => {
 
     expect(reducer.default(undefined, action)).toEqual({...initialState, data: mockEvents});
   });
+
+  it("Should handle the isLoading state", () => {
+    const action = {
+      type: actions.IS_FETCH_LOADING
+    };
+
+    expect(reducer.default(undefined, action)).toEqual({...initialState, isFetchingList: true});
+  });
+
 });

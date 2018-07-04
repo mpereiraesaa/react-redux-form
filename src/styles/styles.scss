@@ -48,7 +48,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
-  height: 150px;
 
   .card {
     margin: 5px;
@@ -127,4 +126,5 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
