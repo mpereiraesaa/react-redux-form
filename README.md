@@ -1,6 +1,6 @@
 # reac-form using Redux custom validator for Form fields.
 
-Live at: https://reactive-form-test.herokuapp.com
+Live at: https://react-form-test.herokuapp.com
 
 This project includes the client code and the server for an small app whom main purpose is to show how good can we develop and complete frontend and the correspondant api. webpack 4 is being used and setup is from scratch.
 
