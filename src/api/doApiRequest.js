@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = 'https://reactive-form-test.herokuapp.com/';
+const API = 'https://react-form-test.herokuapp.com/';
 
 /**
  * Method for making ajax calls to the site's api
