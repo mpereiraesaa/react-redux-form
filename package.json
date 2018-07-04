@@ -6,9 +6,9 @@
   "scripts": {
     "watch-css": "npm run build-css && node-sass -w ./src/styles/styles.scss ./src/styles/styles.css",
     "build-css": "node-sass ./src/styles/styles.scss ./src/styles/styles.css",
-    "build": "webpack --mode production",
+    "build-prod": "webpack --mode production",
     "build-dev": "webpack --mode development",
-    "build-all": "npm-run-all build-server build",
+    "build-all": "npm-run-all build-server build-prod",
     "start": "npm-run-all -p watch-css start-js",
     "start-js": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "jest --env=jsdom --watch",

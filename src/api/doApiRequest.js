@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = 'http://127.0.0.1:3000/';
+const API = 'https://reactive-form-test.herokuapp.com/';
 
 /**
  * Method for making ajax calls to the site's api
