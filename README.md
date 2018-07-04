@@ -16,8 +16,7 @@ Scripts available in client:
 `yarn run build-all`: It will fully build a server from the server source and a production client too in the right folders, after running this you can run `yarn run server` so it will start a basic production server on node.js with the frontend client build.
 
 Scripts available to deal with server:
-`yarn run build` => Build dist folder with ES5 code from the ES6 Source files in `src` dir (This script actually delete old dist directory and reinstall the server dependencies again to bundle with the server files).
-`yarn run fast-build-server` => After running the first build if you want to quickly build your modified server source without installing again the dependencies for the server, this one doesnt delete `dist` folder over server dir nor package.json dependencies as it only overwrites old server ES5 bundle with a new bundle, is a faster way to check your changes and run the server.
+`yarn run fast-build-server`: After running the first build if you want to quickly build your modified server source without installing again the dependencies for the server, this one doesnt delete `dist` folder over server dir nor package.json dependencies as it only overwrites old server ES5 bundle with a new bundle, is a faster way to check your changes and run the server.
 
 # Testing:
 
