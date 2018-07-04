@@ -38,7 +38,7 @@ module.exports = {
                         loader: "file-loader",
                         options: {
                             name: "[name].[ext]",
-                            outputPath: "./public/assets/"
+                            outputPath: "./assets/"
                         }
                     }
                 ]
@@ -56,14 +56,14 @@ module.exports = {
         extensions: ["*", ".js", ".jsx"]
     },
     output: {
-        path: path.resolve(__dirname, "public/dist"),
+        path: path.resolve(__dirname, "server/dist/public"),
         publicPath: "/",
         filename: "bundle.js"
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebPackPlugin({
-            template: "./public/index.html"
+            template: "./index.html"
         })
     ],
     devServer: {

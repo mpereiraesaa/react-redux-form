@@ -17,6 +17,8 @@ api.use(compression());
 api.use(bodyParser.urlencoded({extended: true}));
 api.use(bodyParser.json());
 
+api.use(express.static(__dirname + '/public'));
+
 // listen on the designated port found in the configuration
 api.listen(config.server.port, err => {
   if (err) {

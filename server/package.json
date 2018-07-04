@@ -5,24 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./build.sh",
-    "fast-run": "./run.sh",
     "server": "node dist/server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.26.0",
-    "mongoose-timestamp": "^0.6.0"
-  },
-  "devDependencies": {
+    "mongoose-timestamp": "^0.6.0",
     "body-parser": "^1.18.3",
     "compression": "^1.7.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "moment": "^2.22.2",
-    "mongodb": "^3.0.10",
-    "mongoose": "^5.1.6",
+    "mongodb": "3.0.10",
+    "mongoose": "5.1.6",
     "morgan": "^1.9.0",
     "nodemon": "^1.17.5"
   }

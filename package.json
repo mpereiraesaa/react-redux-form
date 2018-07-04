@@ -6,13 +6,17 @@
   "scripts": {
     "watch-css": "npm run build-css && node-sass -w ./src/styles/styles.scss ./src/styles/styles.css",
     "build-css": "node-sass ./src/styles/styles.scss ./src/styles/styles.css",
-    "build": "webpack production",
-    "build-dev": "webpack development",
+    "build": "webpack --mode production",
+    "build-dev": "webpack --mode development",
+    "build-all": "npm-run-all build-server build",
     "start": "npm-run-all -p watch-css start-js",
     "start-js": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "jest --env=jsdom --watch",
     "coverage": "jest --env=jsdom --coverage",
-    "wdio": "./node_modules/webdriverio/bin/wdio"
+    "e2e": "./node_modules/webdriverio/bin/wdio",
+    "build-server": "./scripts/build-server.sh",
+    "fast-build-server": "./scripts/fast-build.sh",
+    "server": "node server/dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -65,6 +69,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
     "moment": "^2.22.2",
     "react-test-renderer": "^16.4.1",
     "redux-mock-store": "^1.5.3",

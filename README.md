@@ -16,3 +16,9 @@ Scripts available in client:
 Scripts available in server:
 `yarn run build` => Build dist folder with ES5 code from the ES6 Source files in `src` dir (This script actually delete old dist directory and reinstall the server dependencies again to bundle with the server files).
 `yarn run fast-run` => This one doesnt delete `dist` folder nor package.json dependencies as it only overwrites old server ES5 bundle with a new bundle, is a faster way to check your changes and run the server.
+
+# Testing:
+
+`yarn run test`: Run Unit tests using Jest.
+
+`yarn run e2e`: Run E2E tests using webdriverio and latest chromedriver (This need you to install latest chrome version) and it runs in headless mode.
