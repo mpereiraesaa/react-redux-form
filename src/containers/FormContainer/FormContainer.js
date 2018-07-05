@@ -17,7 +17,7 @@ import {
 import {createEvent} from "../../api/form";
 import to from "await-to-js";
 
-export class FormContainer extends Component {
+class FormContainer extends Component {
   static propTypes = {
     receiveUserInput: PropTypes.func.isRequired,
     validateInput: PropTypes.func.isRequired,

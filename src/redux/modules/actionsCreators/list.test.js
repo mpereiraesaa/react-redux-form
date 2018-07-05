@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from "../actions/list";
 import * as actionsCreators from "./list";
-import { mockEvents } from "../../../components/List/__mocks__/mocks.js";
+import { mockEvents } from "../../../components/List/__mocks__/list.mock";
 import { getEvents } from "../../../api/list";
 
 const initialState = {

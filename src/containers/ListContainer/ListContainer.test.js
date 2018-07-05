@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { shallow } from "enzyme";
 import { ListContainer } from "./ListContainer";
-import { mockEvents } from "./__mocks__/mocks.js";
+import { mockEvents } from "./__mocks__/list.mock";
 import { getEvents } from "../../api/list";
 
 jest.mock("../../api/list", () => {

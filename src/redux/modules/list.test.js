@@ -1,6 +1,6 @@
 import * as actions from "./actions/list";
 import * as reducer from "./list";
-import { mockEvents } from "../../components/List/__mocks__/mocks.js";
+import { mockEvents } from "../../components/List/__mocks__/list.mock";
 
 const initialState = {
   data: [],

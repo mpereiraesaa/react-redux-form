@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { mount } from "enzyme";
 import List from "./List";
-import { mockEvents } from "./__mocks__/mocks";
+import { mockEvents } from "./__mocks__/list.mock";
 import MDSpinner from "react-md-spinner";
 import ListItem from "./ListItem";
 
@@ -38,6 +38,6 @@ describe("List component", () => {
     component.setProps({ isLoading: false, message: "ERROR PAPA", data: [] });
 
     expect(component.props().message).toEqual("ERROR PAPA");
-    expect(component.text()).toEqual("ERROR PAPA");        
+    expect(component.text()).toEqual("ERROR PAPA");
   });
 });

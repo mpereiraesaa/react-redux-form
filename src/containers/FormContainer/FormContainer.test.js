@@ -1,35 +1,47 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { mount } from "enzyme";
+import sinon from "sinon";
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux'
-import { FormContainer } from "./FormContainer";
+import FormContainer from "./FormContainer";
+import * as types from '../../redux/modules/actions/form';
 
-describe("FormContainer form component", () => {
-  const formValid = {
-    addToList: jest.fn(),
-    setupFields: jest.fn(),
-    validateInput: jest.fn(),
-    validateFields: jest.fn(),
-    receiveUserInput: jest.fn(),
-    isValidated: true,
-    formData: {
-      first_name: "Manuel",
-      last_name: "Pereira",
-      email: "test@testing.com",
-      event_date: "10-10-2018"
-    },
-    errors: {}
+const mockStore = configureStore([thunk]);
+const dispatch = sinon.spy();
+
+describe("FormContainer integration test with redux", () => {
+  let reducer = {
+    form: {
+      isValidated: false,
+      data: {},
+      errors: {}
+    }
   };
 
-  let container;
+  let store, container;
 
   beforeEach(() => {
-    container = mount(<FormContainer {...formValid} />)
+    store = mockStore(reducer);
+    container = mount(<FormContainer dispatch={dispatch} store={store} />)
   });
 
   it("Should render container component and initialize it", () => {
     expect(container.length).toEqual(1);
   });
+
+  it("Should dispatch the right action after user input", () => {
+    const mockedEvent = { value: "Random", name: "first_name", type: "text"};
+
+    container.find("input[name='first_name']").simulate("change", { target: mockedEvent});
+
+    const expectedAction = {
+      type: types.USER_INPUT_RECEIVED,
+      data: { first_name: "Random" }
+    };
+
+    expect(store.getActions()[1]).toEqual(expectedAction);
+  });
+
 });
