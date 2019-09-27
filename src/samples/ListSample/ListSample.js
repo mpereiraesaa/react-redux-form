@@ -6,14 +6,7 @@ import ListItem from "../../components/List/ListItem";
 import { isListLoading, getList, getError } from "../../redux/modules/selectors/list";
 import { fetchList } from "../../redux/modules/actionsCreators/list";
 
-export class ListContainer extends Component {
-  static propTypes = {
-    data: PropTypes.array.isRequired,
-    isLoading: PropTypes.bool.isRequired,
-    fetchList: PropTypes.func.isRequired,
-    message: PropTypes.string
-  }
-
+export class ListSample extends Component {
   componentDidMount() {
     this.props.fetchList();
   }
@@ -26,6 +19,13 @@ export class ListContainer extends Component {
         message={this.props.message}/>
     );
   }
+}
+
+ListSample.propTypes = {
+  data: PropTypes.array.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  fetchList: PropTypes.func.isRequired,
+  message: PropTypes.string
 }
 
 function mapStateToProps(state) {
@@ -42,4 +42,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ListSample);

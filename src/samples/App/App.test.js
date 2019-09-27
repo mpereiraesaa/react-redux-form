@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { mount } from "enzyme";
 import thunk from "redux-thunk";
 import configureStore from "redux-mock-store";
-import AppContainer from "./AppContainer";
+import App from "./App";
 
-describe("AppContainer main component", () => {
+describe("App main component", () => {
   const mockStore = configureStore([thunk]);
   const initialState = {
     form: {
@@ -24,7 +24,7 @@ describe("AppContainer main component", () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    container = mount(<AppContainer />, {
+    container = mount(<App />, {
       context: { store },
       childContextTypes: {
         store: PropTypes.object.isRequired

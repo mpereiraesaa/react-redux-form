@@ -1,24 +1,24 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Grid, Row } from 'react-flexbox-grid';
-import FormContainer from "../FormContainer/FormContainer";
-import ListContainer from "../ListContainer/ListContainer";
+import FormSample from "../FormSample/FormSample";
+import ListSample from "../ListSample/ListSample";
 
-class AppContainer extends Component {
+class App extends Component {
   render() {
     return (
       <div>
         <Row>
           <div className="header">
             <div className="header__title">
-              <h1>Welcome to the Form</h1>
+              <h1>Form</h1>
             </div>
           </div>
         </Row>
         <Grid fluid>
           <Row>
-            <ListContainer />
-            <FormContainer />
+            <ListSample />
+            <FormSample />
           </Row>
         </Grid>
       </div>
@@ -26,4 +26,4 @@ class AppContainer extends Component {
   }
 }
 
-export default AppContainer;
+export default App;

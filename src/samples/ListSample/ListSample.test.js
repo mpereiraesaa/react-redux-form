@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { shallow } from "enzyme";
-import { ListContainer } from "./ListContainer";
+import { ListSample } from "./ListSample";
 import { mockEvents } from "./__mocks__/list.mock";
 import { getEvents } from "../../api/list";
 
@@ -12,13 +12,13 @@ jest.mock("../../api/list", () => {
   };
 });
 
-describe("ListContainer form component", () => {
+describe("ListSample form component", () => {
   let container;
 
   const fetchList = jest.fn();
 
   beforeEach(() => {
-    container = shallow(<ListContainer isLoading={false} data={mockEvents} fetchList={fetchList} />);
+    container = shallow(<ListSample isLoading={false} data={mockEvents} fetchList={fetchList} />);
   });
 
   it("Should render container component and initialize it", () => {

@@ -5,13 +5,13 @@ import sinon from "sinon";
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux'
-import FormContainer from "./FormContainer";
+import FormSample from "./FormSample";
 import * as types from '../../redux/modules/actions/form';
 
 const mockStore = configureStore([thunk]);
 const dispatch = sinon.spy();
 
-describe("FormContainer integration test with redux", () => {
+describe("FormSample integration test with redux", () => {
   let reducer = {
     form: {
       isValidated: false,
@@ -24,7 +24,7 @@ describe("FormContainer integration test with redux", () => {
 
   beforeEach(() => {
     store = mockStore(reducer);
-    container = mount(<FormContainer dispatch={dispatch} store={store} />)
+    container = mount(<FormSample dispatch={dispatch} store={store} />)
   });
 
   it("Should render container component and initialize it", () => {

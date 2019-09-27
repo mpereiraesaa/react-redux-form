@@ -1,12 +1,13 @@
-# reac-form using Redux custom validator for Form fields.
+# Implementation of a form using basic UI, react, redux and a custom server built for the client purposes with Nodejs and mongodb.
+# Updated components to use react hooks.
 
 Live at: https://react-form-test.herokuapp.com
 
-This project includes the client code and the server for an small app whom main purpose is to show how good can we develop and complete frontend and the correspondant api. webpack 4 is being used and setup is from scratch.
+This project includes the client code and the server for an small app whom main purpose is to show how simple it is to develop a complete front-end with it's correspondant API. Webpack 4 is being used and setup is from scratch.
 
-The frontend is simple and DRY, used the Container/Component pattern to separate the presentation view and layout from the logic and data, redux is implemented and is helping through some actions and reducers to implement a form validation against the user input before calling api. It was tested using Unit testing in the components and redux and E2E tested using webdriverio and selenium chromedriver.
+The front-end is fairly simple, we are now using hooks stuff from redux as well, we properly separate the presentation view and layout from the logic and data, redux is implemented and is helping through some actions and reducers to implement form validation against the user input before calling the api. It was tested using Unit testing in the components and the integrations with redux and E2E tested using webdriverio and selenium chromedriver.
 
-API backend was done using Node.js express and mongoose as ODM for mongodb solution, the database is hosted at mongodb-atlas site (thanks!).
+Backend was done using Nodejs express and mongoose as ODM for mongodb solution, the database is hosted at mongodb-atlas site.
 
 # Instructions:
 
